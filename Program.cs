@@ -1,33 +1,46 @@
-﻿int qtdAdultoNaoBebidaAlcolica, qtdAdultoBebidaAlcolica, qtdCrianca, adultosComESemBebidaAlcolica, todos;
-    Console.Write("Digite a quantidade de adultos que NÃO consomem bebida alcoólica: ");
-    qtdAdultoNaoBebidaAlcolica = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Digite a quantidade de adultos que consomem bebida alcoólica: ");
-    qtdAdultoBebidaAlcolica = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Digite a quantidade de crianças: ");
-    qtdCrianca = Convert.ToInt32(Console.ReadLine());
+﻿double n1, n2, n3, n4, media;
+Console.WriteLine("--- Média ---\n");
+Console.WriteLine("Digite suas notas abaixo:");
+Console.Write("Digite a 1° nota.: ");
+    n1 = Convert.ToDouble(Console.ReadLine());
     
-    Console.Clear();
+Console.Write("Digite a 2° nota.: ");
+    n2 = Convert.ToDouble(Console.ReadLine());
     
-    double carne, acompanhamento, cerveja, refrigerante, agua;
+Console.Write("Digite a 3° nota.: ");
+    n3 = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Digite a 4° nota.: ");
+    n4 = Convert.ToDouble(Console.ReadLine());
     
-    adultosComESemBebidaAlcolica = qtdAdultoNaoBebidaAlcolica + qtdAdultoBebidaAlcolica; todos = adultosComESemBebidaAlcolica + qtdCrianca;
-    
-    //Calculo
-    
-    carne = adultosComESemBebidaAlcolica * 0.4 + qtdCrianca * 0.2;
-    agua = todos * 0.4; acompanhamento = todos * 0.2;
-    cerveja = qtdAdultoBebidaAlcolica * 2;
-    refrigerante = (qtdCrianca + qtdAdultoNaoBebidaAlcolica) * 0.5;
-    
-    //Tabela
-    
-    Console.ForegroundColor = ConsoleColor.Red;
-    
-    Console.WriteLine("\n--- Churrasco ---\n");
-    Console.ResetColor();
-    Console.WriteLine($"Carne.............: {carne:N1} Kl.");
-    Console.WriteLine($"Acompanhamentos...: {acompanhamento:N1} Kl.");
-    Console.WriteLine($"Cerveja...........: {cerveja:N1} l.");
-    Console.WriteLine($"Refrigerante......: {refrigerante:N1} l.");
-    Console.WriteLine($"Água..............: {agua:N1} l.");
-    
+    media = (n1 + n2 + n3 + n4) / 4;
+
+if (n1 > 10 || n1 < 0 ||
+    n2 > 10 || n2 < 0 ||
+    n3 > 10 || n3 < 0 ||
+    n4 > 10 || n4 < 0 ) {
+
+Console.WriteLine("\nDigite somente notas entre 0 e 10.");
+
+  }
+else {
+if (media > 5) {   
+     Console.Write($"\nVocê ficou com média {media}. Resultado: ");
+
+Console.ForegroundColor = ConsoleColor.Blue;
+Console.WriteLine("Aprovado.");
+Console.ResetColor();
+
+}
+  else if (media == 5) {
+     Console.Write($"\nVocê ficou com média {media}. Resultado: ");   Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("Recuperação.");
+Console.ResetColor();
+  }
+  else {
+      Console.Write($"\nVocê ficou com média {media}. Resultado: ");  
+Console.ForegroundColor = ConsoleColor.Red;
+Console.WriteLine("Reprovado.");
+Console.ResetColor();
+  }
+    }
