@@ -1,2 +1,2 @@
-# M-dia4Notas-
-Resolução de Exercício
+# Churrasco
+Resolução
